@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QrcodeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+
+/**
+ * Home
+ * @return view
+ */
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+
+/**
+ * Profile
+ * @return view
+ */
+Route::get('profile', [ProfileController::class, 'getProfile']);
+Route::get('create', [ProfileController::class, 'createProfile']);
+
+/**
+ * Qrcode
+ * @return view
+ */
+Route::get('edit', [QrcodeController::class, 'editData']);
+Route::get('scan', [QrcodeController::class, 'scanQrcode']);
+
+
+Route::get('create/qrcode', [QrcodeController::class, 'createQrcode']);
+
+Route::post('save', [ProfileController::class, 'saveData']);
