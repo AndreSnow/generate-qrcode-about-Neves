@@ -1,7 +1,7 @@
 FROM php:8.1.0-apache
 
 RUN apt-get update -y --fix-missing && \
-    apt-get install -y libmcrypt-dev zlib1g-dev libzip-dev curl gnupg libmagickwand-dev --no-install-recommends && \
+    apt-get install -y libmcrypt-dev zlib1g-dev libzip-dev git curl gnupg libmagickwand-dev --no-install-recommends && \
     pecl install mcrypt-1.0.5 && \
     pecl install imagick && \
     docker-php-ext-enable mcrypt imagick && \
