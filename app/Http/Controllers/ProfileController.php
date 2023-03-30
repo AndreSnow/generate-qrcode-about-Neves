@@ -7,24 +7,25 @@ use BaconQrCode\Renderer\Image\ImagickImageBackEnd;
 use BaconQrCode\Renderer\ImageRenderer;
 use BaconQrCode\Renderer\RendererStyle\RendererStyle;
 use BaconQrCode\Writer;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    protected $profile;
-    protected $scanQr;
+    protected Profile $profile;
+    
     public function __construct()
     {
         $this->profile = new Profile();
-        $this->scanQr = new QrcodeController();
     }
 
-    public function createProfile()
+    public function createProfile(): View
     {
         return view('createprofile');
     }
 
-    public function saveData(Request $request)
+    public function saveData(Request $request): RedirectResponse
     {
         $profileData = $request->only([
             'id',
@@ -62,7 +63,7 @@ class ProfileController extends Controller
         );
     }
 
-    public function getProfile()
+    public function getProfile(): View
     {
         $profile = $this->profile->getProfile();
 

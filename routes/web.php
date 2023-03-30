@@ -23,7 +23,7 @@ Route::get('/', function () {
  * Profile
  * @return view
  */
-Route::get('profile', [ProfileController::class, 'getProfile']);
+Route::get('profile/{name}', [ProfileController::class, 'getProfile']);
 Route::get('create', [ProfileController::class, 'createProfile']);
 Route::post('save', [ProfileController::class, 'saveData']);
 

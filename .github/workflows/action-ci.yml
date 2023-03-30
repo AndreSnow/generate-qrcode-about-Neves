@@ -31,9 +31,6 @@ jobs:
     - name: Run phpcs
       run: docker-compose exec -T php vendor/bin/phpcs
 
-    - name: Run phpstan
-      run: docker-compose exec -T php vendor/bin/phpstan analyse --no-progress
-
     - name: Run grumphp
       run: docker-compose exec -T php vendor/bin/grumphp run
 

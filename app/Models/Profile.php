@@ -23,7 +23,7 @@ class Profile extends Authenticatable
         'name_qr'
     ];
 
-    public function saveData(array $data)
+    public function saveData(array $data): Profile
     {
         return $this->create([
             'name' => $data['name'],
@@ -38,7 +38,7 @@ class Profile extends Authenticatable
         ]);
     }
 
-    public function getProfile()
+    public function getProfile(): Profile|null
     {
         $data = $this->select(
             'name',

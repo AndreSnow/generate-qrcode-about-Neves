@@ -1,19 +1,19 @@
-<?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class QrcodeController extends Controller
 {
-    protected $profile;
+    protected Profile $profile;
 
     public function __construct()
     {
         $this->profile = new Profile();
     }
 
-    public function scanQrcode()
+    public function scanQrcode(): View|RedirectResponse
     {
         $profile = $this->profile->getProfile();
         if (is_null($profile)) {
