@@ -20,14 +20,14 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-
 /**
  * Home
  * @return view
  */
+
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 
 /**
@@ -42,8 +42,7 @@ Route::get('create', [ProfileController::class, 'createProfile']);
  * @return view
  */
 Route::get('edit', [QrcodeController::class, 'editData']);
-Route::get('scan', [QrcodeController::class, 'scanQrcode']);
-
+Route::get('scan', [QrcodeController::class, 'scanQrcode'])->name('scan');
 
 Route::get('create/qrcode', [QrcodeController::class, 'createQrcode']);
 
