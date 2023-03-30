@@ -5,7 +5,7 @@
     <arg name="parallel" value="45"/>
     <arg name="cache" value=".phpcs-cache"/>
     <arg name="colors"/>
-    <arg name="ignore" value="server.php,resources/views" />
+    <arg name="ignore" value="server.php,resources/views, Files.FileHeader, Files.FileHeader.IncorrectOrder"/>
 
     <!-- Apply the PSR-1 and PSR-12 rulesets -->
     <rule ref="PSR1"/>

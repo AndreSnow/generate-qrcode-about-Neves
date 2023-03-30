@@ -15,20 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-/**
- * Home
- * @return view
- */
-
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
 
 /**
  * Profile
@@ -36,6 +25,7 @@ Route::get('/', function () {
  */
 Route::get('profile', [ProfileController::class, 'getProfile']);
 Route::get('create', [ProfileController::class, 'createProfile']);
+Route::post('save', [ProfileController::class, 'saveData']);
 
 /**
  * Qrcode
@@ -43,7 +33,4 @@ Route::get('create', [ProfileController::class, 'createProfile']);
  */
 Route::get('edit', [QrcodeController::class, 'editData']);
 Route::get('scan', [QrcodeController::class, 'scanQrcode'])->name('scan');
-
 Route::get('create/qrcode', [QrcodeController::class, 'createQrcode']);
-
-Route::post('save', [ProfileController::class, 'saveData']);
