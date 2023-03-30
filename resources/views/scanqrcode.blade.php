@@ -14,8 +14,11 @@
 <body>
     <div class="container">
         <h1>{{ $profile->name }}</h1>
-        <p>Scan me</p>
-        <img src="{{ Storage::url('qrcodes/' . $profile->name_qr . '.png') }}" alt="qrcode of {{ $profile->name }}">
+        <p>Scan me or click in image to download</p>
+        <a href="{{ Storage::url('qrcodes/' . $profile->name_qr . '.png') }}">
+            <img src="{{ Storage::url('qrcodes/' . $profile->name_qr . '.png') }}" alt="qrcode of {{ $profile->name }}"
+                download>
+        </a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"

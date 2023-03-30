@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div>
+    <div class="container">
         <p>Hello, my name is {{ ucfirst($profile->name) . ' ' . ucfirst($profile->last_name) }}</p>
         <h1>My history</h1>
         <p>{{ $profile->about_me }}</p>
