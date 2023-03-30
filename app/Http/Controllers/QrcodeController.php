@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Profile;
 
-use BaconQrCode\Renderer\ImageRenderer;
-use BaconQrCode\Renderer\Image\ImagickImageBackEnd;
-use BaconQrCode\Renderer\RendererStyle\RendererStyle;
-use BaconQrCode\Writer;
-
 class QrcodeController extends Controller
 {
+    protected $profile;
+
     public function __construct()
     {
         $this->profile = new Profile();
@@ -18,23 +15,10 @@ class QrcodeController extends Controller
 
     public function scanQrcode()
     {
-        $this->createQrcode();
-
         $profile = $this->profile->getProfile();
+        if (is_null($profile)) {
+            return redirect('/');
+        }
         return view('/scanqrcode', compact('profile'));
-    }
-
-    public function createQrcode(): void
-    {
-        $renderer = new ImageRenderer(
-            new RendererStyle(400),
-            new ImagickImageBackEnd()
-        );
-        $name = $this->profile->getProfile()->name_qr;
-        $writer = new Writer($renderer);
-        $writer->writeFile(
-            url('/profile'),
-            storage_path('app/public/qrcodes/' . $name . '.png')
-        );
     }
 }

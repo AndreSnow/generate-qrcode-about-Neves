@@ -11,55 +11,55 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="width:50%">
         <form method='POST' action='save'>
             @csrf
             <fieldset>
                 <legend>About you</legend>
-                <div class="form-group">
-                    <label for="inputName">First Name <span class="required">*</span></label>
+                <div class="mb-3">
+                    <label for="inputName" class="form-label">First Name <span class="required">*</span></label>
                     <input type="text" class="form-control" name="name" id="inputName" placeholder="e.g. John"
                         required>
                 </div>
-                <div class="form-group">
-                    <label for="inputLastName">Last Name <span class="required">*</span></label>
+                <div class="mb-3">
+                    <label for="inputLastName" class="form-label">Last Name <span class="required">*</span></label>
                     <input type="text" class="form-control" name="last_name" id="inputLastName"
                         placeholder="e.g. Doe" required>
                 </div>
-                <div class="form-group">
-                    <label for="inputAbout_me">About Me <span class="required">*</span></label>
+                <div class="mb-3">
+                    <label for="inputAbout_me" class="form-label">About Me <span class="required">*</span></label>
                     <input type="text" class="form-control" name="about_me" id="inputAbout_me"
                         placeholder="e.g. I'm programming" required>
                 </div>
-                <div class="form-group">
-                    <label for="inputEmail">Email Address <span class="required">*</span></label>
+                <div class="mb-3">
+                    <label for="inputEmail" class="form-label">Email Address <span class="required">*</span></label>
                     <input type="email" class="form-control" name="email" id="inputEmail"
                         placeholder="e.g. john.doe@example.com" required>
                 </div>
-                <div class="form-group">
-                    <label for="inputPhone">Phone Number<span class="required">*</span></label>
+                <div class="mb-3">
+                    <label for="inputPhone" class="form-label">Phone Number<span class="required">*</span></label>
                     <input type="tel" class="form-control" name="phone" id="inputPhone"
                         placeholder="e.g. (12) 9 9456-7890">
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Profiles</legend>
-                <div class="form-group">
-                    <label for="inputLinkedIn">LinkedIn Profile</label>
+                <div class="mb-3">
+                    <label for="inputLinkedIn" class="form-label">LinkedIn Profile</label>
                     <input type="url" class="form-control" name="linkedin" id="inputLinkedIn"
                         placeholder="e.g. https://www.linkedin.com/in/johndoe">
                 </div>
-                <div class="form-group">
-                    <label for="inputGitHub">GitHub Profile</label>
+                <div class="mb-3">
+                    <label for="inputGitHub" class="form-label">GitHub Profile</label>
                     <input type="url" class="form-control" name="github" id="inputGitHub"
                         placeholder="e.g. https://github.com/johndoe">
                 </div>
-                <div class="form-group">
-                    <label for="inputResume">Resume/CV</label>
+                <div class="mb-3">
+                    <label for="inputResume" class="form-label">Resume/CV</label>
                     <input type="url" class="form-control" name="resume" id="inputResume"
                         placeholder="e.g. https://drive.com/resume.pdf">
                 </div>
-                <button type="submit" class="btn btn-outline-secondary">Generate QrCode</button>
+                <button type="submit" class="btn btn-outline-secondary mb-3">Generate QrCode</button>
         </form>
     </div>
 

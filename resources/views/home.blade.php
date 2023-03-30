@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    <div>
+    <div class="container">
         <h1>Buzzvel</h1>
         <p>Hello, welcome to our page "Scan +" of Buzzvel</p>
-        <img src="{{ asset('img/mindmap.png') }}" class="image-exemple" alt="create qrcode">
+        <img src="{{ asset('img/mindmap.png') }}" class="image-exemple" alt="create qrcode" width="30%">
         <p>Click on the button below to create your qrcode</p>
         <a class="btn btn-outline-secondary" href="{{ url('/create') }}">Create Scan +</a>
     </div>
