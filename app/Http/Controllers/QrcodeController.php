@@ -1,7 +1,9 @@
+<?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class QrcodeController extends Controller
