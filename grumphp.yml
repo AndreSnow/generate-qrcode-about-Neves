@@ -7,9 +7,6 @@ grumphp:
     phpcs:
       metadata:
         priority: 2
-    phpstan:
-      metadata:
-        priority: 2
     phpunit:
       always_execute: true
       config_file: phpunit.xml

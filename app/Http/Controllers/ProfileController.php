@@ -14,7 +14,6 @@ use Illuminate\View\View;
 class ProfileController extends Controller
 {
     protected Profile $profile;
-    
     public function __construct()
     {
         $this->profile = new Profile();
