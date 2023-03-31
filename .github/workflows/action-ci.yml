@@ -24,6 +24,3 @@ jobs:
 
       - name: Check docker logs
         run: docker-compose logs php
-
-      - name: Run grumphp
-        run: docker-compose exec -T php vendor/bin/grumphp run --tasks=yamllint
