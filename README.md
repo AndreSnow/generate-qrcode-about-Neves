@@ -68,6 +68,12 @@ docker compose up -d --build
 docker exec -it php_qrcode bash
 ```
 
+-   Ecxecute um composer install:
+
+```sh
+composer install
+```
+
 -   Rode as migrations com:
 
 ```sh
@@ -80,7 +86,7 @@ php artisan migrate
 
     -   PHP>=8.1
 
--   Mude as configurações de conexão com o banco de dados em **.env** basta comentar as configurações do **mysql** e descomentar do **sqlite** e execute as migrations como mostrado acima:
+-   Mude as configurações de conexão com o banco de dados em **.env** basta comentar as configurações do **mysql** e descomentar do **sqlite** e execute o composer e as migrations como mostrado acima:
 
 -   Execute o servidor do PHP:
 
