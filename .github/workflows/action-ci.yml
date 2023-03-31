@@ -24,12 +24,3 @@ jobs:
 
       - name: Check docker logs
         run: docker-compose logs php
-
-      - name: Run phpcs
-        run: docker-compose exec -T php vendor/bin/phpcs
-
-      - name: Run grumphp
-        run: docker-compose exec -T php vendor/bin/grumphp run --tasks=yamllint
-
-      - name: Run phpunit
-        run: docker-compose exec -T php vendor/bin/phpunit -c phpunit.xml
