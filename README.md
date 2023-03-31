@@ -78,7 +78,7 @@ php artisan migrate
 
 -   Sem o docker, será necessário ter:
 
-    -   PHP>=8.0
+    -   PHP>=8.1
 
 -   Mude as configurações de conexão com o banco de dados em **.env** basta comentar as configurações do **mysql** e descomentar do **sqlite** e execute as migrations como mostrado acima:
 
