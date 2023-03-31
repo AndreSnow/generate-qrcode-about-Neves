@@ -15,8 +15,6 @@ COPY apache.conf /etc/apache2/sites-enabled/000-default.conf
 
 WORKDIR /var/www/html
 
-RUN composer install
-
 RUN a2enmod rewrite headers ssl && \
     service apache2 restart
 
