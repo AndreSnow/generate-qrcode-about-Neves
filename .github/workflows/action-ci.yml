@@ -3,33 +3,36 @@ name: Qrcode
 on:
   push:
     branches:
-      - '*'
-      - '*/*'
-      - '**'
+      - "*"
+      - "*/*"
+      - "**"
 
 jobs:
   qrcode:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set directory permissions
-      run: chmod -R 777 .
+      - name: Set directory permissions
+        run: chmod -R 777 .
 
-    - name: Build the docker-compose stack
-      run: docker-compose up -d
+      - name: Build the docker-compose stack
+        run: docker-compose up -d
 
-    - name: Check running containers
-      run: docker ps -a
+      - name: Check running containers
+        run: docker ps -a
 
-    - name: Check docker logs
-      run: docker-compose logs php
+      - name: Check docker logs
+        run: docker-compose logs php
 
-    - name: Run phpcs
-      run: docker-compose exec -T php vendor/bin/phpcs
+      - name: composer install
+        run: docker-compose exec php composer install
 
-    - name: Run grumphp
-      run: docker-compose exec -T php vendor/bin/grumphp run --tasks=yamllint
+      - name: Run phpcs
+        run: docker-compose exec -T php vendor/bin/phpcs
 
-    - name: Run phpunit
-      run: docker-compose exec -T php vendor/bin/phpunit -c phpunit.xml
+      - name: Run grumphp
+        run: docker-compose exec -T php vendor/bin/grumphp run --tasks=yamllint
+
+      - name: Run phpunit
+        run: docker-compose exec -T php vendor/bin/phpunit -c phpunit.xml
